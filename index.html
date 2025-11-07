@@ -4,23 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple E-Commerce Store</title>
+    <meta name="theme-color" content="#06b6d4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>🛍️ Simple Store</h1>
-        <div class="cart-icon" onclick="toggleCart()">
-            🛒 Cart (<span id="cart-count">0</span>)
+        <div class="container header-inner">
+            <div class="brand" onclick="window.scrollTo({top:0, behavior:'smooth'})">✨ Lumina Mart</div>
+            <nav class="nav">
+                <a href="#products-section">Products</a>
+                <a href="#deals">Deals</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search">
+                    <input type="text" placeholder="Search products..." aria-label="Search products">
+                    <button title="Search">🔎</button>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span class="cart-text">Cart</span> (<span id="cart-count">0</span>)
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- Landing Page Hero Section -->
     <div class="landing-hero">
         <div class="hero-content">
-            <h1 class="hero-title">🛍️ Welcome to Simple Store</h1>
+            <h1 class="hero-title">✨ Welcome to Lumina Mart</h1>
             <p class="hero-subtitle">Discover amazing products at great prices</p>
             <p class="hero-description">Browse through our collection of premium electronics and accessories</p>
             <button class="hero-btn" onclick="document.getElementById('products-section').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">10k+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">1,200+</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">4.8★</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+            </div>
         </div>
         <div class="hero-features">
             <div class="feature-card">
@@ -46,6 +78,42 @@
         </div>
     </div>
 
+    <!-- Brands Marquee -->
+    <section class="brands">
+        <div class="container">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span>Apple</span>
+                    <span>Samsung</span>
+                    <span>OnePlus</span>
+                    <span>Sony</span>
+                    <span>Mi</span>
+                    <span>Boat</span>
+                    <span>JBL</span>
+                    <span>Nothing</span>
+                    <span>Realme</span>
+                    <span>HP</span>
+                    <span>Dell</span>
+                    <span>Asus</span>
+                </div>
+                <div class="marquee-track" aria-hidden="true">
+                    <span>Apple</span>
+                    <span>Samsung</span>
+                    <span>OnePlus</span>
+                    <span>Sony</span>
+                    <span>Mi</span>
+                    <span>Boat</span>
+                    <span>JBL</span>
+                    <span>Nothing</span>
+                    <span>Realme</span>
+                    <span>HP</span>
+                    <span>Dell</span>
+                    <span>Asus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen" style="display: none;">
         <div class="loading-spinner"></div>
@@ -53,7 +121,34 @@
     </div>
 
     <!-- Products Section -->
-    <main id="products-section">
+    <main id="products-section" class="container">
+        <div class="section-heading">
+            <h2>Trending Products</h2>
+            <p class="section-subtitle">Handpicked items our customers love</p>
+        </div>
+        <!-- Categories -->
+        <section class="categories">
+            <a class="category-card" href="#products-section">
+                <div class="category-icon">📱</div>
+                <div class="category-title">Mobiles</div>
+            </a>
+            <a class="category-card" href="#products-section">
+                <div class="category-icon">🎧</div>
+                <div class="category-title">Audio</div>
+            </a>
+            <a class="category-card" href="#products-section">
+                <div class="category-icon">💻</div>
+                <div class="category-title">Laptops</div>
+            </a>
+            <a class="category-card" href="#products-section">
+                <div class="category-icon">⌚</div>
+                <div class="category-title">Wearables</div>
+            </a>
+            <a class="category-card" href="#products-section">
+                <div class="category-icon">🏠</div>
+                <div class="category-title">Smart Home</div>
+            </a>
+        </section>
         <div class="products-container" id="products-container">
             <!-- Products will be loaded here by JavaScript -->
         </div>
@@ -77,6 +172,52 @@
     </div>
 
     <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container testimonials-inner">
+            <div class="testimonial">
+                <p>“Fast delivery and great prices. Highly recommended!”</p>
+                <span>— Ayesha</span>
+            </div>
+            <div class="testimonial">
+                <p>“Quality products and easy returns. 5/5 ⭐”</p>
+                <span>— Rohit</span>
+            </div>
+            <div class="testimonial">
+                <p>“Customer support was super helpful. Loved the experience.”</p>
+                <span>— Kavya</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter">
+        <div class="container newsletter-inner">
+            <h3>Get exclusive deals in your inbox</h3>
+            <p>Subscribe for updates on new arrivals, sales and more.</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email" aria-label="Email address">
+                <button>Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">✨ Lumina Mart</div>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Support</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="Instagram">📸</a>
+                <a href="#" aria-label="Facebook">👍</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
